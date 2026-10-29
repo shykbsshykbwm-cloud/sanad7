@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سند - نظام حماية الشركات من غرامات وزارة العمل قطر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" onerror="this.onerror=null;var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js';document.head.appendChild(s)"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" onerror="this.onerror=null;var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';document.head.appendChild(s)"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" onerror="this.onerror=null;var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js';document.head.appendChild(s)"></script>
+<style>
+:root{
+  --maroon:#8A1538; --maroon-d:#650F29; --maroon-l:#F7E9EE;
+  --bg:#EDEFF2; --card:#FFFFFF; --line:#DCE0E6; --text:#1B2430; --muted:#66727F; --head:#F6F7F9;
+  --red:#C62828; --red-l:#FDECEC; --orange:#E65100; --amber-l:#FFF1DC; --yellow:#F2B705;
+  --green:#2E7D32; --green-l:#E7F4E8;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{font-family:'IBM Plex Sans Arabic','Tajawal',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+button,input,select{font-family:inherit;font-size:inherit}
+.num,.tnum,td,th{font-variant-numeric:tabular-nums}
+svg.ic{flex:none;vertical-align:middle}
+
+/* ---------- Login ---------- */
+.login{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr}
+.login-brand{background:linear-gradient(155deg,var(--maroon) 0%,var(--maroon-d) 100%);color:#fff;padding:56px 56px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.login-brand::after{content:"";position:absolute;inset-inline-end:-120px;bottom:-120px;width:380px;height:380px;border-radius:50%;border:56px solid rgba(255,255,255,.06)}
+.login-brand h1{font-size:34px;line-height:1.35;margin:0 0 14px;font-weight:700;max-width:520px}
+.login-brand p{margin:0;color:rgba(255,255,255,.8);max-width:480px}
+.feat{display:flex;flex-direction:column;gap:14px;margin-top:34px}
+.feat div{display:flex;gap:12px;align-items:center;color:rgba(255,255,255,.92)}
+.feat span.b{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.14);display:grid;place-items:center}
+.login-form-wrap{display:grid;place-items:center;padding:32px 20px;position:relative}
+.login-card{width:100%;max-width:420px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:32px;box-shadow:0 8px 30px rgba(20,30,50,.06)}
+.login-card h2{margin:0 0 4px;font-size:22px}
+.tabs{display:flex;background:var(--head);border-radius:8px;padding:3px;margin-bottom:20px}
+.tabs button{flex:1;border:0;background:transparent;padding:8px;border-radius:6px;font-weight:600;cursor:pointer;color:var(--muted)}
+.tabs button.on{background:#fff;color:var(--maroon);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.login-lang{position:absolute;top:18px;inset-inline-end:20px}
+@media (max-width:860px){.login{grid-template-columns:1fr}.login-brand{padding:32px 24px}.login-brand h1{font-size:24px}.feat{display:none}}
+
+/* ---------- Forms & buttons ---------- */
+label.f{display:block;font-weight:600;margin-bottom:6px;font-size:13px}
+.inp{width:100%;border:1px solid #C6CCD4;border-radius:8px;padding:10px 12px;background:#fff;color:var(--text);outline:none;transition:border-color .15s,box-shadow .15s}
+.inp:focus{border-color:var(--maroon);box-shadow:0 0 0 3px rgba(138,21,56,.14)}
+.err{color:var(--red);font-size:12.5px;margin-top:6px;min-height:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;justify-content:center;border:1px solid var(--maroon);background:var(--maroon);color:#fff;border-radius:8px;padding:9px 16px;font-weight:600;cursor:pointer;transition:background .15s,transform .05s;white-space:nowrap}
+.btn:hover{background:var(--maroon-d)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible,.nav a:focus-visible,.inp:focus-visible{outline:2px solid var(--maroon);outline-offset:2px}
+.btn.ghost{background:#fff;color:var(--maroon)}
+.btn.ghost:hover{background:var(--maroon-l)}
+.btn.danger{background:#fff;color:var(--red);border-color:#E7B4B4}
+.btn.danger:hover{background:var(--red-l)}
+.btn.sm{padding:6px 10px;font-size:13px}
+.btn.lg{padding:12px 20px;font-size:15px}
+.btn.block{width:100%}
+.iconbtn{border:0;background:transparent;color:var(--muted);cursor:pointer;padding:6px;border-radius:6px}
+.iconbtn:hover{background:var(--red-l);color:var(--red)}
+
+/* ---------- Shell ---------- */
+.shell{position:sticky;top:0;z-index:30;height:56px;background:var(--maroon);color:#fff;display:flex;align-items:center;gap:14px;padding-inline:20px;box-shadow:0 1px 0 rgba(0,0,0,.2)}
+.shell .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px}
+.shell .sub{font-weight:400;opacity:.8;font-size:12.5px;border-inline-start:1px solid rgba(255,255,255,.3);padding-inline-start:12px;max-width:320px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shell .sp{flex:1}
+.shbtn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:8px;padding:6px 12px;display:inline-flex;align-items:center;gap:7px;cursor:pointer;font-weight:500}
+.shbtn:hover{background:rgba(255,255,255,.22)}
+.layout{display:grid;grid-template-columns:232px 1fr;min-height:calc(100vh - 56px)}
+.nav{background:#fff;border-inline-end:1px solid var(--line);padding:14px 10px;display:flex;flex-direction:column;gap:4px;position:sticky;top:56px;align-self:start;height:calc(100vh - 56px)}
+.nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:8px;color:#394453;text-decoration:none;font-weight:500;border-inline-start:3px solid transparent;cursor:pointer}
+.nav a:hover{background:var(--head)}
+.nav a.on{background:var(--maroon-l);color:var(--maroon);border-inline-start-color:var(--maroon);font-weight:700}
+.nav .foot{margin-top:auto;color:var(--muted);font-size:12px;padding:10px 12px;border-top:1px solid var(--line)}
+main{padding:24px;min-width:0;max-width:1400px;width:100%}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .nav{position:sticky;top:56px;z-index:20;height:auto;flex-direction:row;overflow-x:auto;border-inline-end:0;border-bottom:1px solid var(--line);padding:8px 10px}
+  .nav a{white-space:nowrap;border-inline-start:0;border-bottom:3px solid transparent;border-radius:6px}
+  .nav a.on{border-bottom-color:var(--maroon)}
+  .nav .foot{display:none}
+  main{padding:16px}
+  .shell .sub{display:none}
+}
+
+/* ---------- Page bits ---------- */
+.ph{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.ph h2{margin:0;font-size:22px;font-weight:700}
+.ph .d{color:var(--muted);font-size:13px;margin-top:2px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px}
+.card .ch{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-weight:700}
+.card .cb{padding:18px}
+.muted{color:var(--muted)}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:16px;margin-bottom:18px}
+.tile{border-radius:12px;padding:20px;color:#fff;min-height:178px;display:flex;flex-direction:column;justify-content:space-between;text-align:start;border:0;cursor:pointer;box-shadow:0 2px 6px rgba(20,30,50,.12);transition:transform .15s,box-shadow .15s;font-family:inherit}
+.tile:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(20,30,50,.18)}
+.tile .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.tile .lbl{font-weight:600;font-size:14.5px;line-height:1.4;max-width:75%}
+.tile .ico{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.2);display:grid;place-items:center}
+.tile .big{font-size:46px;font-weight:700;line-height:1.05;margin:10px 0 6px;letter-spacing:-.5px}
+.tile .big small{font-size:16px;font-weight:600;opacity:.9;margin-inline-start:6px}
+.tile .sub{font-size:12.5px;opacity:.92}
+.t-red{background:linear-gradient(135deg,#D93636,#A91E1E)}
+.t-orange{background:linear-gradient(135deg,#F7871C,#DB5A00)}
+.t-yellow{background:linear-gradient(135deg,#FFD23F,#F2AC00);color:#2B2200}
+.t-yellow .ico{background:rgba(0,0,0,.1)}
+.t-maroon{background:linear-gradient(135deg,#9A1B42,#5E0E26)}
+
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:16px;margin-bottom:16px}
+@media (max-width:1000px){.grid2{grid-template-columns:1fr}}
+.banner{display:flex;gap:12px;align-items:flex-start;padding:13px 16px;border-radius:10px;margin-bottom:16px;border:1px solid}
+.banner.red{background:var(--red-l);border-color:#F1B9B9;color:#8E1B1B}
+.banner.green{background:var(--green-l);border-color:#B9DDBB;color:#1F5E23}
+.banner.info{background:#fff;border-color:var(--line);color:var(--text)}
+.banner b{font-weight:700}
+
+.ring{display:grid;place-items:center;position:relative;width:150px;height:150px;margin:6px auto 12px}
+.ring .v{position:absolute;text-align:center}
+.ring .v b{font-size:34px;display:block;line-height:1}
+.bars{display:flex;flex-direction:column;gap:11px}
+.bar{display:grid;grid-template-columns:120px 1fr 40px;gap:10px;align-items:center;font-size:13px}
+.bar .tr{background:#EEF0F3;border-radius:6px;height:14px;overflow:hidden}
+.bar .fi{height:100%;border-radius:6px;min-width:0;transition:width .4s}
+.bar .n{font-weight:700;text-align:end}
+
+/* ---------- Tables ---------- */
+.tw{overflow-x:auto}
+table.t{width:100%;border-collapse:collapse;min-width:760px}
+table.t th{background:var(--head);text-align:start;font-weight:700;font-size:12.5px;color:#4A5563;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.t td{padding:10px 12px;border-bottom:1px solid #EEF0F3;vertical-align:middle}
+table.t tr:hover td{background:#FAFBFC}
+table.t tr.risk td{background:#FFF8F8}
+table.t tr.risk:hover td{background:#FFF1F1}
+td.exp{background:var(--red-l)!important;color:var(--red);font-weight:700}
+td.exp small{display:block;font-weight:500;font-size:11.5px}
+td.soon{color:var(--orange);font-weight:600}
+td.soon small{display:block;font-weight:500;font-size:11.5px}
+.pill{display:inline-flex;align-items:center;gap:5px;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:700;white-space:nowrap}
+.pill.red{background:var(--red-l);color:var(--red)}
+.pill.amber{background:var(--amber-l);color:var(--orange)}
+.pill.green{background:var(--green-l);color:var(--green)}
+.pill.gray{background:#EEF0F3;color:#526070}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)}
+.toolbar .inp{width:auto;min-width:0}
+.sbox{position:relative;flex:1 1 220px;min-width:180px}
+.sbox svg{position:absolute;inset-inline-start:11px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.sbox .inp{padding-inline-start:36px;width:100%}
+.empty{text-align:center;padding:44px 20px;color:var(--muted)}
+.empty .eic{width:56px;height:56px;border-radius:14px;background:var(--maroon-l);color:var(--maroon);display:grid;place-items:center;margin:0 auto 12px}
+.empty h3{color:var(--text);margin:0 0 4px;font-size:16px}
+.pager{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+
+.drop{border:2px dashed #C9A0AF;background:#FCF6F8;border-radius:12px;padding:24px;text-align:center;cursor:pointer;display:block;transition:background .15s,border-color .15s}
+.drop:hover,.drop.over{background:var(--maroon-l);border-color:var(--maroon)}
+.drop b{color:var(--maroon)}
+.cols{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.cols span{background:#fff;border:1px solid var(--line);border-radius:6px;padding:2px 9px;font-size:12.5px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.chip{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 16px;min-width:130px}
+.chip b{display:block;font-size:22px;line-height:1.2}
+.chip span{font-size:12.5px;color:var(--muted)}
+.chip.r b{color:var(--red)} .chip.o b{color:var(--orange)} .chip.g b{color:var(--green)}
+
+/* ---------- Modal / toast ---------- */
+.ov{position:fixed;inset:0;background:rgba(20,26,36,.5);display:grid;place-items:center;z-index:80;padding:16px}
+.md{background:#fff;border-radius:12px;width:100%;max-width:520px;max-height:92vh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.md .mh{padding:16px 20px;border-bottom:1px solid var(--line);font-weight:700;font-size:16px;display:flex;justify-content:space-between;align-items:center}
+.md .mb{padding:20px}
+.md .mf{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end}
+#toasts{position:fixed;bottom:18px;inset-inline-start:50%;transform:translateX(-50%);z-index:100;display:flex;flex-direction:column;gap:8px;align-items:center;width:max-content;max-width:92vw}
+[dir=rtl] #toasts{transform:translateX(50%);inset-inline-start:auto;right:50%}
+.toast{background:#1B2430;color:#fff;border-radius:9px;padding:10px 16px;box-shadow:0 8px 24px rgba(0,0,0,.25);font-weight:500;animation:up .2s ease}
+.toast.ok{background:#1F6B2A}.toast.err{background:#B3261E}.toast.warn{background:#B45309}
+@keyframes up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- PDF report (rendered off-screen) ---------- */
+#reportRoot{position:fixed;left:-12000px;top:0;width:794px;background:#fff;color:#1B2430;font-family:'IBM Plex Sans Arabic','Tajawal',sans-serif}
+.rp{padding:0 0 28px}
+.rp .hd{background:var(--maroon);color:#fff;padding:26px 36px;display:flex;justify-content:space-between;align-items:center}
+.rp .hd h1{margin:0;font-size:22px}
+.rp .hd small{opacity:.85;font-size:12.5px}
+.rp .bd{padding:24px 36px}
+.rp .meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+.rp .meta div{background:#F6F7F9;border-radius:8px;padding:10px 14px}
+.rp .meta small{display:block;color:#66727F;font-size:11.5px}
+.rp .meta b{font-size:14px}
+.rp .kp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.rp .kp div{border-radius:10px;padding:18px;color:#fff}
+.rp .kp .a{background:#C62828}.rp .kp .b{background:var(--maroon)}
+.rp .kp b{display:block;font-size:34px;line-height:1.1}
+.rp h3{margin:18px 0 8px;font-size:15px;color:var(--maroon)}
+.rp table{width:100%;border-collapse:collapse;font-size:12.5px}
+.rp th{background:#F1F2F5;text-align:start;padding:7px 10px;border:1px solid #DCE0E6}
+.rp td{padding:7px 10px;border:1px solid #DCE0E6}
+.rp .note{margin-top:18px;font-size:11.5px;color:#66727F;border-top:1px solid #DCE0E6;padding-top:10px}
+.rp .rd{color:#C62828;font-weight:700}
+</style>
+</head>
+<body>
+
+<!-- ===================== LOGIN ===================== -->
+<div id="loginView" class="login" hidden>
+  <div class="login-brand">
+    <div style="display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px" id="lbBrand"></div>
+    <div>
+      <h1 data-i18n="appTitle"></h1>
+      <p data-i18n="loginHero"></p>
+      <div class="feat" id="lbFeat"></div>
+    </div>
+    <div style="font-size:12.5px;opacity:.75" data-i18n="privacy"></div>
+  </div>
+  <div class="login-form-wrap">
+    <button class="shbtn login-lang" style="background:#fff;color:var(--maroon);border-color:var(--line)" onclick="toggleLang()" id="lgLang"></button>
+    <form class="login-card" id="loginForm" autocomplete="on" novalidate>
+      <div class="tabs"><button type="button" id="tabIn" onclick="setMode('in')"></button><button type="button" id="tabUp" onclick="setMode('up')"></button></div>
+      <h2 id="lgTitle"></h2>
+      <p class="muted" style="margin:0 0 20px" id="lgSub"></p>
+      <div id="fName" style="margin-bottom:14px"><label class="f" for="lgName" data-i18n="companyName"></label><input class="inp" id="lgName" maxlength="120" data-i18n-ph="phCompany" autocomplete="organization"></div>
+      <div id="fEst" style="margin-bottom:14px"><label class="f" for="lgEst" data-i18n="estNo"></label><input class="inp" id="lgEst" maxlength="30" data-i18n-ph="phEst" dir="ltr" style="text-align:start"></div>
+      <div style="margin-bottom:14px"><label class="f" for="lgEmail" data-i18n="lblEmail"></label><input class="inp" id="lgEmail" type="email" maxlength="120" dir="ltr" style="text-align:start" autocomplete="username"></div>
+      <div style="margin-bottom:14px"><label class="f" for="lgPass" data-i18n="lblPass"></label><input class="inp" id="lgPass" type="password" maxlength="128" dir="ltr" style="text-align:start" autocomplete="current-password"></div>
+      <div id="fPass2" style="margin-bottom:14px"><label class="f" for="lgPass2" data-i18n="lblPass2"></label><input class="inp" id="lgPass2" type="password" maxlength="128" dir="ltr" style="text-align:start" autocomplete="new-password"></div>
+      <label style="display:flex;gap:8px;align-items:center;cursor:pointer;font-size:13px;margin-bottom:4px"><input type="checkbox" id="lgShow" onchange="togglePw(this.checked)"><span data-i18n="showPass"></span></label>
+      <div class="muted" id="lgHint" style="font-size:12.5px;margin-top:6px"></div>
+      <div class="err" id="lgErr" role="alert"></div>
+      <button class="btn lg block" type="submit" id="lgBtn"></button>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== APP ===================== -->
+<div id="appView" hidden>
+  <header class="shell">
+    <div class="brand" id="shBrand"></div>
+    <div class="sub" id="shCompany"></div>
+    <div class="sp"></div>
+    <button class="shbtn" onclick="toggleLang()" id="shLang"></button>
+    <button class="shbtn" onclick="logout()" id="shOut"></button>
+  </header>
+  <div class="layout">
+    <nav class="nav" id="nav"></nav>
+    <main id="main"></main>
+  </div>
+</div>
+
+<div id="reportRoot"></div>
+<div id="modalRoot"></div>
+<div id="toasts"></div>
+
+<script>
+/* =====================================================================
+   Sanad - Labor Ministry fine protection (Qatar)
+   Pure HTML + Tailwind + JS. All data lives in LocalStorage.
+   ===================================================================== */
+
+/* ---------- i18n ---------- */
+const D = {
+  appName:['سند','Sanad'],
+  tabIn:['دخول','Sign in'],tabUp:['حساب جديد','New account'],
+  lblEmail:['البريد الإلكتروني','Email'],lblPass:['كلمة المرور','Password'],lblPass2:['تأكيد كلمة المرور','Confirm password'],showPass:['إظهار كلمة المرور','Show password'],
+  inSub:['أدخل بريدك الإلكتروني وكلمة المرور.','Enter your email and password.'],
+  upTitle:['إنشاء حساب للشركة','Create a company account'],upSub:['أنشئ حسابًا ببريد وكلمة مرور. بياناتك تُشفَّر على جهازك.','Create an account with an email and password. Your data is encrypted on your device.'],
+  btnUp:['إنشاء الحساب','Create account'],
+  errEmail:['أدخل بريدًا إلكترونيًا صحيحًا.','Enter a valid email address.'],
+  errPass:['كلمة المرور 8 أحرف على الأقل وتحتوي حروفًا وأرقامًا.','Password must be at least 8 characters with letters and numbers.'],
+  errPass2:['كلمتا المرور غير متطابقتين.','Passwords do not match.'],
+  errExists:['يوجد حساب بهذا البريد. استخدم تبويب الدخول.','An account with this email already exists. Use the sign-in tab.'],
+  errBad:['البريد أو كلمة المرور غير صحيحة.','Incorrect email or password.'],
+  errLock:['محاولات كثيرة. انتظر {0} ثانية.','Too many attempts. Wait {0} seconds.'],
+  noCrypto:['هذا المتصفح لا يدعم التشفير. استخدم متصفحًا حديثًا.','This browser does not support encryption. Use a modern browser.'],
+  noStore:['تعذّر حفظ الحساب. أوقف وضع التصفح الخاص ثم أعد المحاولة.','Could not save the account. Turn off private browsing and try again.'],
+  noRecover:['لا يمكن استرجاع كلمة المرور إذا نُسيت، لأن البيانات مشفرة بها. احتفظ بها وبنسخة احتياطية.','A forgotten password cannot be recovered because the data is encrypted with it. Keep it safe and keep a backup.'],
+  idleOut:['تم تسجيل خروجك بعد 15 دقيقة من عدم النشاط.','You were signed out after 15 minutes of inactivity.'],
+  working:['جارٍ التشفير...','Encrypting...'],
+  sAccount:['الحساب','Account'],cpTitle:['تغيير كلمة المرور','Change password'],cpOld:['كلمة المرور الحالية','Current password'],cpNew:['كلمة المرور الجديدة','New password'],cpDone:['تم تغيير كلمة المرور.','Password changed.'],cpWrong:['كلمة المرور الحالية غير صحيحة.','Current password is incorrect.'],
+
+  appTitle:['سند - نظام حماية الشركات من غرامات وزارة العمل قطر','Sanad - Protecting Companies from Ministry of Labour Fines, Qatar'],
+  loginHero:['تابع انتهاء الإقامات والكروت الصحية والعقود وتحويل الرواتب، واعرف الغرامة المتوقعة قبل أن تقع.','Track residency, health card and contract expiries and WPS salary transfers. Know your expected fines before they happen.'],
+  feat1:['تنبيهات الإقامات والكروت الصحية والعقود','Alerts for residencies, health cards and contracts'],
+  feat2:['مراقبة تحويل الرواتب عبر نظام WPS','Monitoring of WPS salary transfers'],
+  feat3:['تقرير مخاطر جاهز بصيغة PDF','Ready-to-download PDF risk report'],
+  privacy:['بياناتك مشفرة (AES-256) على جهازك ولا تُرسل إلى أي خادم.','Your data is encrypted (AES-256) on your device and never sent to any server.'],
+  loginTitle:['تسجيل دخول الشركة','Company sign-in'],
+  loginSub:['أدخل بيانات منشأتك للبدء.','Enter your establishment details to get started.'],
+  companyName:['اسم الشركة','Company name'],
+  estNo:['رقم المنشأة','Establishment number'],
+  phCompany:['اسم الشركة كما في السجل التجاري','Company name as registered'],
+  phEst:['مثال: 123456','e.g. 123456'],
+  enter:['دخول','Sign in'],
+  errName:['أدخل اسم الشركة (حرفان على الأقل).','Enter the company name (2 characters minimum).'],
+  errEst:['أدخل رقم المنشأة.','Enter the establishment number.'],
+  navDash:['لوحة التحكم','Dashboard'],
+  navWorkers:['العمال','Workers'],
+  navWps:['تنبيهات WPS','WPS Alerts'],
+  navSettings:['الإعدادات','Settings'],
+  navFoot:['البيانات محفوظة محليًا في هذا المتصفح','Data is stored locally in this browser'],
+  logout:['خروج','Sign out'],
+  langBtn:['English','العربية'],
+  today:['اليوم','Today'],
+  dlReport:['تحميل تقرير المخاطر PDF','Download Risk Report PDF'],
+  dashTitle:['لوحة التحكم','Dashboard'],
+  c1:['إقامات تنتهي خلال {0} يوم','Residencies expiring within {0} days'],
+  c1s:['منتهية بالفعل: {0} · تنتهي قريبًا: {1}','Already expired: {0} · Expiring soon: {1}'],
+  c2:['رواتب لم تُحوَّل في WPS','Salaries not transferred in WPS'],
+  c2s:['إجمالي المبالغ المتأخرة: {0}','Total overdue amount: {0}'],
+  c2s0:['لم يُرفع ملف رواتب بعد','No payroll file uploaded yet'],
+  c3:['كروت صحية منتهية','Expired health cards'],
+  c3s:['تنتهي خلال {0} يوم: {1}','Expiring within {0} days: {1}'],
+  c4:['إجمالي الغرامات المتوقعة لو لم يتم التجديد','Expected fines if not renewed'],
+  c4s:['{0} مخالفة × {1} {2}','{0} violations × {1} {2}'],
+  qar:['ر.ق','QAR'],
+  worker_unit:['عامل','workers'],
+  noDataTitle:['لا توجد بيانات بعد','No data yet'],
+  noDataText:['ارفع ملف Excel للعمال وملف الرواتب ليبدأ النظام بالحساب. كل شيء يبدأ فارغًا.','Upload your workers Excel file and payroll file so the system can start calculating. Everything starts empty.'],
+  goWorkers:['رفع ملف العمال','Upload workers file'],
+  goWps:['رفع ملف الرواتب','Upload payroll file'],
+  bannerRisk:['يوجد {0} مخالفة متوقعة بقيمة {1}. جدّد الوثائق المنتهية وحوّل الرواتب المتأخرة لتجنب الغرامات.','{0} expected violations worth {1}. Renew expired documents and transfer overdue salaries to avoid fines.'],
+  bannerOk:['لا توجد مخالفات حالية ولا وثائق تنتهي خلال {0} يوم. وضع الشركة سليم.','No current violations and no documents expiring within {0} days. The company is in good standing.'],
+  score:['مؤشر الالتزام','Compliance score'],
+  scoreSub:['{0} من {1} عامل لديهم وثائق سليمة','{0} of {1} workers have valid documents'],
+  scoreNone:['يظهر بعد رفع ملف العمال','Shown after workers are uploaded'],
+  dist:['توزيع تواريخ الانتهاء','Expiry distribution'],
+  dId:['الإقامات','Residencies'],dHealth:['الكروت الصحية','Health cards'],dContract:['العقود','Contracts'],
+  b0:['منتهية','Expired'],b1:['خلال 30 يومًا','Within 30 days'],b2:['31 إلى 60 يومًا','31 to 60 days'],b3:['61 إلى 90 يومًا','61 to 90 days'],b4:['أكثر من 90 يومًا','Over 90 days'],
+  attn:['يحتاج إلى إجراء عاجل','Needs urgent action'],
+  attnNone:['لا توجد وثائق منتهية أو قريبة الانتهاء.','No expired or soon-to-expire documents.'],
+  more:['عرض كل العمال','View all workers'],
+  formula:['طريقة الحساب: الغرامة المتوقعة = (الوثائق المنتهية + الوثائق التي تنتهي خلال {0} يوم + رواتب WPS المتأخرة) × {1} {2}. القيمة قابلة للتعديل من الإعدادات.','How it is calculated: expected fine = (expired documents + documents expiring within {0} days + overdue WPS salaries) × {1} {2}. The rate can be changed in Settings.'],
+  /* workers */
+  wTitle:['العمال','Workers'],
+  wDesc:['ارفع ملف Excel وسيتم فحص كل التواريخ تلقائيًا.','Upload an Excel file and every date is checked automatically.'],
+  colName:['اسم العامل','Worker name'],colQid:['رقم البطاقة','ID number'],colIdExp:['تاريخ انتهاء البطاقة','ID expiry date'],colHealth:['تاريخ انتهاء كرت الصحة','Health card expiry'],colContract:['تاريخ انتهاء العقد','Contract expiry'],
+  colStatus:['الحالة','Status'],
+  dropTitle:['اسحب ملف Excel هنا أو اضغط للاختيار','Drag an Excel file here or click to choose'],
+  dropFmt:['الصيغ المدعومة: xlsx · xls · csv. الصف الأول يحتوي على أسماء الأعمدة التالية:','Supported: xlsx · xls · csv. The first row holds these column names:'],
+  modeMerge:['إضافة وتحديث (حسب رقم البطاقة)','Add & update (by ID number)'],
+  modeReplace:['استبدال كل البيانات الحالية','Replace all current data'],
+  tpl:['تحميل نموذج فارغ','Download empty template'],
+  search:['بحث بالاسم أو رقم البطاقة','Search by name or ID number'],
+  fAll:['كل العمال','All workers'],fAny:['فيه وثيقة منتهية فقط','Any expired only'],fId:['بطاقة منتهية','Expired ID'],fIdRisk:['بطاقة منتهية أو قريبة','ID expired or expiring'],fHealth:['كرت صحي منتهٍ','Expired health card'],fContract:['عقد منتهٍ','Expired contract'],fSoon:['تنتهي قريبًا','Expiring soon'],fOk:['سليم','Valid'],
+  addWorker:['إضافة عامل','Add worker'],exportXlsx:['تصدير Excel','Export Excel'],clearAll:['حذف الكل','Delete all'],
+  showing:['عرض {0} من {1}','Showing {0} of {1}'],
+  prev:['السابق','Previous'],next:['التالي','Next'],
+  stBad:['مخالف','Violation'],stSoon:['قريب الانتهاء','Expiring soon'],stOk:['سليم','Valid'],stNone:['بدون تواريخ','No dates'],
+  expAgo:['منتهية منذ {0} يوم','Expired {0} days ago'],expToday:['تنتهي اليوم','Expires today'],leftDays:['متبقي {0} يوم','{0} days left'],
+  wEmptyT:['جدول العمال فارغ','The workers table is empty'],wEmptyD:['ارفع ملف Excel أو أضف عاملًا يدويًا للبدء.','Upload an Excel file or add a worker manually to begin.'],
+  noMatch:['لا توجد نتائج مطابقة.','No matching results.'],
+  delete:['حذف','Delete'],cancel:['إلغاء','Cancel'],save:['حفظ','Save'],confirm:['تأكيد','Confirm'],
+  confirmDelAll:['سيتم حذف كل بيانات العمال. هل أنت متأكد؟','All worker data will be deleted. Are you sure?'],
+  confirmDelWps:['سيتم حذف كل سجلات الرواتب. هل أنت متأكد؟','All payroll records will be deleted. Are you sure?'],
+  confirmDelOne:['حذف هذا السجل؟','Delete this record?'],
+  addTitle:['إضافة عامل','Add a worker'],
+  needName:['أدخل اسم العامل أو رقم البطاقة.','Enter the worker name or ID number.'],
+  imported:['تم استيراد {0} سجل: {1} جديد و{2} محدَّث.','Imported {0} records: {1} new, {2} updated.'],
+  skipped:['تم تجاهل {0} صف فارغ أو غير صالح.','{0} empty or invalid rows were skipped.'],
+  badDates:['{0} خلية تاريخ لم تُقرأ. استخدم الصيغة 31/12/2026 أو 2026-12-31.','{0} date cells could not be read. Use 31/12/2026 or 2026-12-31.'],
+  noRows:['لم يتم العثور على بيانات في الملف.','No data rows were found in the file.'],
+  readErr:['تعذّرت قراءة الملف. تأكد أنه ملف Excel صالح.','Could not read the file. Make sure it is a valid Excel file.'],
+  libXlsx:['لم يتم تحميل مكتبة Excel. تحقق من اتصال الإنترنت ثم أعد فتح الصفحة.','The Excel library did not load. Check your internet connection and reload the page.'],
+  libPdf:['لم يتم تحميل مكتبة PDF. تحقق من اتصال الإنترنت ثم أعد فتح الصفحة.','The PDF library did not load. Check your internet connection and reload the page.'],
+  /* wps */
+  pTitle:['تنبيهات WPS','WPS Alerts'],
+  pDesc:['ارفع ملف الرواتب وسيقارن النظام تاريخ اليوم بتاريخ الدفع.','Upload the payroll file and the system compares today with the payment date.'],
+  pcName:['اسم العامل','Worker name'],pcQid:['رقم البطاقة','ID number'],pcAmt:['المبلغ','Amount'],pcDue:['تاريخ الدفع','Payment date'],pcPaid:['تاريخ التحويل','Transfer date'],
+  pcPaidShort:['تاريخ التحويل','Transfer date'],
+  pDropTitle:['اسحب ملف الرواتب هنا أو اضغط للاختيار','Drag the payroll file here or click to choose'],
+  pHint:['تاريخ التحويل عمود إلزامي. السجل الذي بلا تاريخ تحويل ومضى تاريخ دفعه يُعتبر غير محوَّل، ويمكنك الضغط على "تحويل الآن" ليُسجَّل بتاريخ ووقت اللحظة نفسها.','Transfer date is a required column. A record with no transfer date whose payment date has passed counts as not transferred. Press "Transfer now" to record it with the current date and time.'],
+  pNow:['تحويل الآن','Transfer now'],pNowDone:['سُجّل التحويل بتاريخ ووقت الآن.','Transfer recorded with the current date and time.'],pNoTransfer:['لم يُحوَّل','Not transferred'],
+  pLate:['متأخر {0} يوم','{0} days overdue'],pPaidLate:['حُوِّل متأخرًا {0} يوم','Paid {0} days late'],pToday:['مستحق اليوم','Due today'],pUp:['بعد {0} يوم','In {0} days'],pPaid:['حُوِّل في الموعد','Paid on time'],pNoDate:['بدون تاريخ','No date'],
+  sTotal:['إجمالي السجلات','Total records'],sLate:['غير محوَّلة ومتأخرة','Not transferred & overdue'],sPaidLate:['حُوِّلت متأخرة','Paid late'],sUp:['قادمة','Upcoming'],sPaid:['حُوِّلت في الموعد','Paid on time'],
+  pAlert:['تنبيه: {0} راتب لم يُحوَّل عبر WPS بعد تاريخ الدفع، بإجمالي {1}. حوّلها فورًا لتجنب الغرامة.','Alert: {0} salaries were not transferred via WPS after the payment date, totaling {1}. Transfer them now to avoid a fine.'],
+  pAlertNone:['لا توجد رواتب متأخرة حاليًا.','No overdue salaries right now.'],
+  pEmptyT:['لم يُرفع ملف رواتب','No payroll file uploaded'],pEmptyD:['ارفع ملف Excel للرواتب لتظهر التنبيهات هنا.','Upload a payroll Excel file to see alerts here.'],
+  pImported:['تم استيراد {0} سجل رواتب.','Imported {0} payroll records.'],
+  /* settings */
+  sTitle:['الإعدادات','Settings'],
+  sFine:['قيمة الغرامة لكل مخالفة (ر.ق)','Fine per violation (QAR)'],
+  sWin:['مهلة التنبيه المسبق (أيام)','Early warning window (days)'],
+  sCompany:['بيانات الشركة','Company details'],
+  sSaved:['تم حفظ الإعدادات.','Settings saved.'],
+  sBackup:['نسخة احتياطية','Backup'],
+  sBackupD:['صدّر كل بياناتك في ملف JSON أو استرجعها من نسخة سابقة. ملف النسخة غير مشفّر، فاحفظه في مكان آمن.','Export all your data as a JSON file or restore it from a previous backup. The backup file is not encrypted, so keep it somewhere safe.'],
+  sExport:['تصدير نسخة احتياطية','Export backup'],sImport:['استرجاع نسخة','Restore backup'],
+  sDanger:['منطقة الخطر','Danger zone'],sDangerD:['يحذف الحساب وكل بيانات العمال والرواتب نهائيًا من هذا المتصفح.','Permanently deletes the account and all workers and payroll data from this browser.'],
+  sWipe:['حذف كل البيانات','Delete all data'],
+  confirmWipe:['سيتم حذف الحساب وكل بياناته نهائيًا من هذا المتصفح. هل أنت متأكد؟','The account and all its data will be permanently deleted from this browser. Are you sure?'],
+  restored:['تم استرجاع النسخة الاحتياطية.','Backup restored.'],badBackup:['ملف النسخة الاحتياطية غير صالح.','The backup file is not valid.'],
+  invalidNum:['أدخل رقمًا صحيحًا.','Enter a valid number.'],
+  /* report */
+  rTitle:['تقرير مخاطر غرامات وزارة العمل','Labour Ministry Fines Risk Report'],
+  rCompany:['اسم الشركة','Company'],rEst:['رقم المنشأة','Establishment no.'],rDate:['تاريخ التقرير','Report date'],
+  rViol:['عدد المخالفات','Number of violations'],rFine:['المبلغ المتوقع للغرامة','Expected fine amount'],
+  rBreak:['تفصيل المخالفات','Violation breakdown'],rType:['النوع','Type'],rExpired:['منتهية','Expired'],rSoon:['تنتهي خلال {0} يوم','Expiring in {0} days'],rCount:['العدد','Count'],
+  rRes:['الإقامات (البطاقة)','Residencies (ID)'],rHealth:['الكروت الصحية','Health cards'],rCon:['العقود','Contracts'],rWps:['رواتب WPS غير محوَّلة','WPS salaries not transferred'],
+  rWorkers:['العمال المخالفون','Workers with issues'],rIssue:['المشكلة','Issue'],
+  rMoreRows:['و {0} سجلات أخرى غير معروضة.','and {0} more records not shown.'],
+  rNone:['لا توجد مخالفات مسجلة.','No violations on record.'],
+  rNote:['هذا التقرير تقدير استرشادي مبني على البيانات التي رفعتها الشركة، ولا يمثل قرارًا رسميًا من وزارة العمل. المبلغ = عدد المخالفات × {0} {1}.','This report is an indicative estimate based on the data uploaded by the company and is not an official Ministry of Labour decision. Amount = violations × {0} {1}.'],
+  rDone:['تم تحميل التقرير.','Report downloaded.'],rBusy:['جارٍ إنشاء التقرير...','Generating the report...'],
+  iId:['بطاقة','ID'],iHealth:['كرت صحي','Health card'],iContract:['عقد','Contract'],
+  expiredWord:['منتهية','expired'],soonWord:['قريبة','soon']
+};
+let lang = 'ar';
+const t = (k, ...a) => { let v = D[k] ? D[k][lang === 'ar' ? 0 : 1] : k; a.forEach((x, i) => { v = v.split('{' + i + '}').join(x); }); return v; };
+
+/* ---------- helpers ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => Number(n || 0).toLocaleString('en-US');
+const uid = () => Math.random().toString(36).slice(2, 9) + Date.now().toString(36);
+const ICONS = {
+  dash:'<rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/>',
+  users:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  clock:'<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  set:'<line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>',
+  up:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>',
+  down:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
+  trash:'<polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>',
+  plus:'<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>',
+  alert:'<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+  file:'<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>',
+  idc:'<rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="12" r="2"/><line x1="13" y1="10" x2="18" y2="10"/><line x1="13" y1="14" x2="18" y2="14"/>',
+  pulse:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
+  cash:'<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/>',
+  shield:'<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/>',
+  out:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>',
+  search:'<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
+  globe:'<circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>',
+  x:'<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
+  sheet:'<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/>'
+};
+const ic = (n, s = 18) => `<svg class="ic" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[n]}</svg>`;
+const LOGO = (s = 30) => `<svg width="${s}" height="${s}" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2l12 4.5V15c0 7.2-5 12.4-12 15C9 27.4 4 22.2 4 15V6.5z" fill="#fff"/><path d="M10.5 15.5l4 4 7-8" fill="none" stroke="#8A1538" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage unavailable: keep in memory */ } },
+  del(k) { try { localStorage.removeItem(k); } catch (e) {} }
+};
+const state = { company: null, workers: [], wps: [], settings: { fine: 10000, soon: 30 } };
+lang = store.get('sanad_lang', 'ar');
+const saveWorkers = () => saveVault();
+const saveWps = () => saveVault();
+
+function toast(msg, type = '') {
+  const el = document.createElement('div');
+  el.className = 'toast ' + type; el.textContent = msg;
+  $('#toasts').appendChild(el);
+  setTimeout(() => el.remove(), type === 'err' || type === 'warn' ? 6000 : 3500);
+}
+
+/* ---------- dates ---------- */
+const pad = n => String(n).padStart(2, '0');
+const mkIso = (y, m, d) => `${y}-${pad(m)}-${pad(d)}`;
+function validIso(y, m, d) {
+  if (m < 1 || m > 12 || d < 1 || d > 31 || y < 1900 || y > 2200) return null;
+  const dt = new Date(Date.UTC(y, m - 1, d));
+  if (dt.getUTCMonth() !== m - 1) return null;
+  return mkIso(y, m, d);
+}
+const toWestern = s => s.replace(/[٠-٩]/g, c => c.charCodeAt(0) - 1632).replace(/[۰-۹]/g, c => c.charCodeAt(0) - 1776);
+const todayISO = () => { const d = new Date(); return mkIso(d.getFullYear(), d.getMonth() + 1, d.getDate()); };
+function daysBetween(a, b) {
+  const [y1, m1, d1] = a.split('-').map(Number), [y2, m2, d2] = b.split('-').map(Number);
+  return Math.round((Date.UTC(y2, m2 - 1, d2) - Date.UTC(y1, m1 - 1, d1)) / 864e5);
+}
+const daysLeft = iso => iso ? daysBetween(todayISO(), iso) : null;
+const fmtDate = iso => { if (!iso) return ''; const [y, m, d] = iso.split('-'); return `${d}/${m}/${y}`; };
+/* returns '' for empty, null for unreadable, ISO string otherwise */
+function parseDate(v) {
+  if (v === '' || v == null) return '';
+  if (v instanceof Date) return isNaN(v) ? null : mkIso(v.getFullYear(), v.getMonth() + 1, v.getDate());
+  if (typeof v === 'number') {
+    if (v > 20000 && v < 80000) { const d = new Date(Math.round((v - 25569) * 864e5)); return mkIso(d.getUTCFullYear(), d.getUTCMonth() + 1, d.getUTCDate()); }
+    return null;
+  }
+  const s = toWestern(String(v).trim());
+  if (!s) return '';
+  let m = s.match(/^(\d{4})[-\/.](\d{1,2})[-\/.](\d{1,2})/);
+  if (m) return validIso(+m[1], +m[2], +m[3]);
+  m = s.match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{4})/);
+  if (m) return validIso(+m[3], +m[2], +m[1]);
+  if (/^\d{5}$/.test(s)) return parseDate(Number(s));
+  return null;
+}
+function docStatus(iso) {
+  if (!iso) return 'none';
+  const d = daysLeft(iso);
+  if (d < 0) return 'expired';
+  if (d <= state.settings.soon) return 'soon';
+  return 'ok';
+}
+
+/* ---------- Excel reading ---------- */
+const norm = s => String(s == null ? '' : s).toLowerCase()
+  .replace(/[ً-ٰٟ]/g, '').replace(/[أإآ]/g, 'ا').replace(/ى/g, 'ي').replace(/ة/g, 'ه')
+  .replace(/[^\p{L}\p{N}]/gu, '');
+const ALIASES = {
+  workers: {
+    name: ['اسم العامل', 'الاسم', 'اسم', 'اسم الموظف', 'name', 'worker name', 'employee name', 'employee', 'worker'],
+    qid: ['رقم البطاقة', 'رقم البطاقه', 'رقم الهوية', 'رقم الاقامة', 'رقم الإقامة', 'البطاقة', 'qid', 'qatar id', 'id number', 'id no', 'id', 'card number'],
+    idExp: ['تاريخ انتهاء البطاقة', 'تاريخ انتهاء الاقامة', 'تاريخ انتهاء الإقامة', 'انتهاء البطاقة', 'انتهاء الاقامة', 'id expiry', 'id expiry date', 'qid expiry', 'residency expiry', 'residence expiry'],
+    healthExp: ['تاريخ انتهاء كرت الصحة', 'تاريخ انتهاء الكرت الصحي', 'تاريخ انتهاء البطاقة الصحية', 'انتهاء كرت الصحة', 'health card expiry', 'health expiry', 'health card expiry date'],
+    contractExp: ['تاريخ انتهاء العقد', 'انتهاء العقد', 'contract expiry', 'contract end', 'contract expiry date']
+  },
+  wps: {
+    name: ['اسم العامل', 'الاسم', 'اسم الموظف', 'name', 'worker name', 'employee name', 'employee'],
+    qid: ['رقم البطاقة', 'رقم البطاقه', 'رقم الهوية', 'qid', 'id number', 'id'],
+    amount: ['المبلغ', 'الراتب', 'صافي الراتب', 'amount', 'salary', 'net salary'],
+    due: ['تاريخ الدفع', 'تاريخ الاستحقاق', 'تاريخ الراتب', 'payment date', 'pay date', 'due date', 'salary date'],
+    paid: ['تاريخ التحويل', 'تاريخ التحويل الفعلي', 'تاريخ السداد', 'transfer date', 'paid date', 'actual payment date', 'actual transfer date']
+  }
+};
+function mapColumns(rows, kind) {
+  const spec = ALIASES[kind], keys = Object.keys(spec);
+  const al = {}; keys.forEach(k => al[k] = spec[k].map(norm));
+  let best = { score: 0, map: {}, row: 0 };
+  rows.slice(0, 6).forEach((r, ri) => {
+    const map = {};
+    r.forEach((cell, ci) => { const n = norm(cell); if (!n) return; keys.forEach(k => { if (map[k] === undefined && al[k].includes(n)) map[k] = ci; }); });
+    const score = Object.keys(map).length;
+    if (score > best.score) best = { score, map, row: ri };
+  });
+  if (best.score >= 2) return { map: best.map, start: best.row + 1 };
+  const map = {}; keys.forEach((k, i) => map[k] = i);
+  return { map, start: 1 };
+}
+async function readSheet(file) {
+  if (typeof XLSX === 'undefined') { toast(t('libXlsx'), 'err'); return null; }
+  try {
+    const buf = await file.arrayBuffer();
+    const wb = XLSX.read(buf, { type: 'array' });
+    const ws = wb.Sheets[wb.SheetNames[0]];
+    return XLSX.utils.sheet_to_json(ws, { header: 1, raw: true, defval: '' });
+  } catch (e) { toast(t('readErr'), 'err'); return null; }
+}
+const cellStr = v => (v instanceof Date ? '' : String(v == null ? '' : v).trim());
+
+async function importWorkers(file) {
+  if (!file) return;
+  const rows = await readSheet(file); if (!rows) return;
+  const { map, start } = mapColumns(rows, 'workers');
+  const mode = (document.querySelector('input[name=wmode]:checked') || {}).value || 'merge';
+  let bad = 0, skipped = 0, added = 0, updated = 0;
+  const list = mode === 'replace' ? [] : state.workers.slice();
+  const byQid = {}; list.forEach(w => { if (w.qid) byQid[norm(w.qid)] = w; });
+  for (let i = start; i < rows.length; i++) {
+    const r = rows[i], g = k => map[k] === undefined ? '' : r[map[k]];
+    const name = cellStr(g('name')), qid = cellStr(g('qid')).replace(/\.0$/, '');
+    if (!name && !qid) { if (r.some(c => cellStr(c))) skipped++; continue; }
+    const dates = {};
+    ['idExp', 'healthExp', 'contractExp'].forEach(k => { const p = parseDate(g(k)); if (p === null) { bad++; dates[k] = ''; } else dates[k] = p; });
+    const rec = { name, qid, idExp: dates.idExp, healthExp: dates.healthExp, contractExp: dates.contractExp };
+    const ex = qid ? byQid[norm(qid)] : null;
+    if (ex) { Object.assign(ex, rec); updated++; }
+    else { const w = Object.assign({ id: uid() }, rec); list.push(w); if (qid) byQid[norm(qid)] = w; added++; }
+  }
+  if (!added && !updated) { toast(t('noRows'), 'warn'); return; }
+  state.workers = list; saveWorkers();
+  wf.page = 1;
+  toast(t('imported', added + updated, added, updated), 'ok');
+  if (skipped) toast(t('skipped', skipped), 'warn');
+  if (bad) toast(t('badDates', bad), 'warn');
+  render();
+}
+async function importWps(file) {
+  if (!file) return;
+  const rows = await readSheet(file); if (!rows) return;
+  const { map, start } = mapColumns(rows, 'wps');
+  let bad = 0, n = 0; const list = [];
+  for (let i = start; i < rows.length; i++) {
+    const r = rows[i], g = k => map[k] === undefined ? '' : r[map[k]];
+    const name = cellStr(g('name')), qid = cellStr(g('qid')).replace(/\.0$/, '');
+    if (!name && !qid) continue;
+    const due = parseDate(g('due')), paid = parseDate(g('paid'));
+    if (due === null || paid === null) bad++;
+    let amt = g('amount'); amt = typeof amt === 'number' ? amt : parseFloat(toWestern(cellStr(amt)).replace(/,/g, ''));
+    list.push({ id: uid(), name, qid, amount: isNaN(amt) ? 0 : amt, due: due || '', paid: paid || '', paidTime: '' });
+    n++;
+  }
+  if (!n) { toast(t('noRows'), 'warn'); return; }
+  state.wps = list; saveWps();
+  toast(t('pImported', n), 'ok');
+  if (bad) toast(t('badDates', bad), 'warn');
+  render();
+}
+function dropFile(ev, kind) {
+  ev.preventDefault(); ev.currentTarget.classList.remove('over');
+  const f = ev.dataTransfer.files && ev.dataTransfer.files[0];
+  if (f) (kind === 'wps' ? importWps : importWorkers)(f);
+}
+
+/* ---------- analysis ---------- */
+function wpsInfo(r) {
+  if (!r.due) return { s: 'nodate', d: 0 };
+  const today = todayISO();
+  if (r.paid) { const d = daysBetween(r.due, r.paid); return d > 0 ? { s: 'paidlate', d } : { s: 'paid', d: 0 }; }
+  const d = daysBetween(r.due, today);
+  if (d > 0) return { s: 'late', d };
+  if (d === 0) return { s: 'today', d: 0 };
+  return { s: 'upcoming', d: -d };
+}
+function stats() {
+  const W = state.workers, S = { idExp: 0, idSoon: 0, hExp: 0, hSoon: 0, cExp: 0, cSoon: 0, problem: 0, items: [] };
+  W.forEach(w => {
+    const a = docStatus(w.idExp), b = docStatus(w.healthExp), c = docStatus(w.contractExp);
+    if (a === 'expired') S.idExp++; if (a === 'soon') S.idSoon++;
+    if (b === 'expired') S.hExp++; if (b === 'soon') S.hSoon++;
+    if (c === 'expired') S.cExp++; if (c === 'soon') S.cSoon++;
+    if ([a, b, c].some(x => x === 'expired' || x === 'soon')) S.problem++;
+    [['id', a, w.idExp], ['health', b, w.healthExp], ['contract', c, w.contractExp]].forEach(([ty, st, dt]) => {
+      if (st === 'expired' || st === 'soon') S.items.push({ w, ty, st, dt, d: daysLeft(dt) });
+    });
+  });
+  const late = state.wps.filter(r => wpsInfo(r).s === 'late');
+  S.wpsLate = late.length;
+  S.wpsLateAmt = late.reduce((a, r) => a + (r.amount || 0), 0);
+  S.expired = S.idExp + S.hExp + S.cExp;
+  S.soon = S.idSoon + S.hSoon + S.cSoon;
+  S.violations = S.expired + S.soon + S.wpsLate;
+  S.fine = S.violations * state.settings.fine;
+  S.items.sort((x, y) => x.d - y.d);
+  return S;
+}
+
+/* ---------- routing / shell ---------- */
+const PAGES = ['dashboard', 'workers', 'wps', 'settings'];
+let page = 'dashboard';
+const wf = { q: '', f: 'all', page: 1, size: 50 };
+let distType = 'idExp';
+
+function applyI18n() {
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  document.title = t('appTitle');
+  document.querySelectorAll('[data-i18n]').forEach(e => e.textContent = t(e.dataset.i18n));
+  document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = t(e.dataset.i18nPh));
+  $('#lbBrand').innerHTML = LOGO(36) + `<span>${t('appName')}</span>`;
+  $('#lbFeat').innerHTML = ['feat1', 'feat2', 'feat3'].map((k, i) => `<div><span class="b">${ic(['idc', 'cash', 'file'][i], 17)}</span>${t(k)}</div>`).join('');
+  $('#lgLang').innerHTML = ic('globe', 16) + t('langBtn');
+  $('#shBrand').innerHTML = LOGO(28) + `<span>${t('appName')}</span>`;
+  $('#shLang').innerHTML = ic('globe', 16) + `<span>${t('langBtn')}</span>`;
+  $('#shOut').innerHTML = ic('out', 16) + `<span>${t('logout')}</span>`;
+  if (state.company) $('#shCompany').textContent = state.company.name;
+  renderLogin();
+}
+function toggleLang() {
+  lang = lang === 'ar' ? 'en' : 'ar';
+  store.set('sanad_lang', lang);
+  applyI18n(); if (state.company) { buildNav(); render(); }
+}
+function buildNav() {
+  const items = [['dashboard', 'dash', 'navDash'], ['workers', 'users', 'navWorkers'], ['wps', 'clock', 'navWps'], ['settings', 'set', 'navSettings']];
+  $('#nav').innerHTML = items.map(([p, i, k]) => `<a href="#${p}" class="${p === page ? 'on' : ''}">${ic(i, 19)}<span>${t(k)}</span></a>`).join('') + `<div class="foot">${t('navFoot')}</div>`;
+}
+function route() {
+  const h = (location.hash || '').replace('#', '');
+  page = PAGES.includes(h) ? h : 'dashboard';
+  buildNav(); render(); window.scrollTo(0, 0);
+}
+function go(p, filter) { if (filter) { wf.f = filter; wf.page = 1; wf.q = ''; } location.hash = p; if (page === p) render(); }
+function render() {
+  if (!state.company) return;
+  const m = $('#main');
+  if (page === 'dashboard') m.innerHTML = viewDashboard();
+  else if (page === 'workers') { m.innerHTML = viewWorkers(); updateWorkersTable(); }
+  else if (page === 'wps') m.innerHTML = viewWps();
+  else m.innerHTML = viewSettings();
+}
+
+/* ---------- accounts & encryption (PBKDF2 + AES-GCM, all local) ---------- */
+const te = new TextEncoder(), td = new TextDecoder();
+function b64(buf) { const u = new Uint8Array(buf); let s = ''; for (let i = 0; i < u.length; i += 8192) s += String.fromCharCode.apply(null, u.subarray(i, i + 8192)); return btoa(s); }
+const ub64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function deriveKey(pw, salt) {
+  const km = await crypto.subtle.importKey('raw', te.encode(pw), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', salt, iterations: 250000, hash: 'SHA-256' }, km, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+}
+async function encryptVault(key, json) {
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, te.encode(json));
+  return { iv: b64(iv), ct: b64(ct) };
+}
+async function decryptVault(key, rec) {
+  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: ub64(rec.iv) }, key, ub64(rec.ct));
+  return JSON.parse(td.decode(pt));
+}
+let session = null, saveChain = Promise.resolve();
+function saveVault() {
+  if (!session) return;
+  const s = session, snap = JSON.stringify({ company: state.company, workers: state.workers, wps: state.wps, settings: state.settings });
+  saveChain = saveChain.then(async () => {
+    const rec = await encryptVault(s.key, snap);
+    const acc = store.get('sanad_accounts', {});
+    acc[s.email] = { salt: s.saltB64, iv: rec.iv, ct: rec.ct };
+    store.set('sanad_accounts', acc);
+  }).catch(() => {});
+}
+const validEmail = e => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e);
+const validPass = p => p.length >= 8 && /[A-Za-z؀-ۿ]/.test(p) && /\d/.test(p);
+
+let authMode = 'in', fails = 0, lockUntil = 0;
+function setMode(m) { authMode = m; $('#lgErr').textContent = ''; renderLogin(); }
+function renderLogin() {
+  const up = authMode === 'up';
+  $('#tabIn').textContent = t('tabIn'); $('#tabUp').textContent = t('tabUp');
+  $('#tabIn').classList.toggle('on', !up); $('#tabUp').classList.toggle('on', up);
+  $('#lgTitle').textContent = up ? t('upTitle') : t('loginTitle');
+  $('#lgSub').textContent = up ? t('upSub') : t('inSub');
+  $('#lgBtn').textContent = up ? t('btnUp') : t('enter');
+  $('#fName').hidden = !up; $('#fEst').hidden = !up; $('#fPass2').hidden = !up;
+  $('#lgHint').textContent = up ? t('noRecover') : '';
+  $('#lgPass').autocomplete = up ? 'new-password' : 'current-password';
+}
+function togglePw(show) { ['lgPass', 'lgPass2'].forEach(i => $('#' + i).type = show ? 'text' : 'password'); }
+function loginBusy(on) { const b = $('#lgBtn'); b.disabled = on; b.style.opacity = on ? .7 : 1; if (on) b.textContent = t('working'); else renderLogin(); }
+
+async function doLogin(e) {
+  if (e) e.preventDefault();
+  const err = $('#lgErr'); err.textContent = '';
+  if (!(window.crypto && crypto.subtle)) { err.textContent = t('noCrypto'); return; }
+  const email = $('#lgEmail').value.trim().toLowerCase(), pw = $('#lgPass').value;
+  if (!validEmail(email)) { err.textContent = t('errEmail'); return; }
+  if (authMode === 'up') {
+    const name = $('#lgName').value.trim(), est = toWestern($('#lgEst').value.trim());
+    if (name.length < 2) { err.textContent = t('errName'); return; }
+    if (est.length < 1) { err.textContent = t('errEst'); return; }
+    if (!validPass(pw)) { err.textContent = t('errPass'); return; }
+    if (pw !== $('#lgPass2').value) { err.textContent = t('errPass2'); return; }
+    if (store.get('sanad_accounts', {})[email]) { err.textContent = t('errExists'); return; }
+    loginBusy(true);
+    try {
+      const salt = crypto.getRandomValues(new Uint8Array(16));
+      const key = await deriveKey(pw, salt);
+      session = { email, key, saltB64: b64(salt) };
+      state.company = { name, est }; state.workers = []; state.wps = []; state.settings = { fine: 10000, soon: 30 };
+      saveVault(); await saveChain;
+      if (!store.get('sanad_accounts', {})[email]) { session = null; state.company = null; err.textContent = t('noStore'); loginBusy(false); return; }
+    } catch (x) { session = null; state.company = null; err.textContent = t('noCrypto'); loginBusy(false); return; }
+    loginBusy(false);
+  } else {
+    if (Date.now() < lockUntil) { err.textContent = t('errLock', Math.ceil((lockUntil - Date.now()) / 1000)); return; }
+    const rec = store.get('sanad_accounts', {})[email];
+    loginBusy(true);
+    try {
+      const salt = rec ? ub64(rec.salt) : crypto.getRandomValues(new Uint8Array(16));
+      const key = await deriveKey(pw, salt);
+      if (!rec) throw new Error('nouser');
+      const data = await decryptVault(key, rec);
+      session = { email, key, saltB64: rec.salt };
+      state.company = data.company; state.workers = data.workers || []; state.wps = data.wps || [];
+      state.settings = Object.assign({ fine: 10000, soon: 30 }, data.settings || {});
+      fails = 0;
+    } catch (x) {
+      fails++; if (fails >= 5) { lockUntil = Date.now() + 30000; fails = 0; }
+      err.textContent = t('errBad'); loginBusy(false); return;
+    }
+    loginBusy(false);
+  }
+  ['lgPass', 'lgPass2'].forEach(i => $('#' + i).value = '');
+  showApp();
+}
+$('#loginForm').addEventListener('submit', doLogin);
+
+function showApp() {
+  $('#loginView').hidden = true; $('#appView').hidden = false;
+  location.hash = '#dashboard';
+  applyI18n(); route(); resetIdle();
+}
+function logout(msg) {
+  session = null; clearTimeout(idleT);
+  state.company = null; state.workers = []; state.wps = []; state.settings = { fine: 10000, soon: 30 };
+  $('#main').innerHTML = ''; $('#reportRoot').innerHTML = ''; closeModal();
+  $('#appView').hidden = true; $('#loginView').hidden = false;
+  ['lgName', 'lgEst', 'lgPass', 'lgPass2'].forEach(i => $('#' + i).value = '');
+  authMode = 'in'; applyI18n();
+  $('#lgErr').textContent = typeof msg === 'string' ? msg : '';
+}
+let idleT = null;
+function resetIdle() { clearTimeout(idleT); if (session) idleT = setTimeout(() => logout(t('idleOut')), 15 * 60 * 1000); }
+['click', 'keydown', 'touchstart', 'scroll'].forEach(ev => document.addEventListener(ev, resetIdle, { passive: true }));
+
+/* ---------- dashboard ---------- */
+function viewDashboard() {
+  const S = stats(), win = state.settings.soon, hasData = state.workers.length || state.wps.length;
+  const qar = t('qar');
+  const tiles = `
+  <div class="tiles">
+    <button class="tile t-red" onclick="go('workers','idRisk')">
+      <div class="top"><div class="lbl">${t('c1', win)}</div><div class="ico">${ic('idc', 20)}</div></div>
+      <div><div class="big num">${fmt(S.idExp + S.idSoon)}</div><div class="sub">${t('c1s', S.idExp, S.idSoon)}</div></div>
+    </button>
+    <button class="tile t-orange" onclick="go('wps')">
+      <div class="top"><div class="lbl">${t('c2')}</div><div class="ico">${ic('cash', 20)}</div></div>
+      <div><div class="big num">${fmt(S.wpsLate)}</div><div class="sub">${state.wps.length ? t('c2s', fmt(S.wpsLateAmt) + ' ' + qar) : t('c2s0')}</div></div>
+    </button>
+    <button class="tile t-yellow" onclick="go('workers','healthExpired')">
+      <div class="top"><div class="lbl">${t('c3')}</div><div class="ico">${ic('pulse', 20)}</div></div>
+      <div><div class="big num">${fmt(S.hExp)}</div><div class="sub">${t('c3s', win, S.hSoon)}</div></div>
+    </button>
+    <button class="tile t-maroon" onclick="go('workers','soonOrExpired')">
+      <div class="top"><div class="lbl">${t('c4')}</div><div class="ico">${ic('alert', 20)}</div></div>
+      <div><div class="big num">${fmt(S.fine)}<small>${qar}</small></div><div class="sub">${t('c4s', fmt(S.violations), fmt(state.settings.fine), qar)}</div></div>
+    </button>
+  </div>`;
+
+  let banner = '';
+  if (!hasData) banner = `<div class="banner info">${ic('file', 22)}<div style="flex:1"><b>${t('noDataTitle')}</b><div class="muted">${t('noDataText')}</div><div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap"><button class="btn sm" onclick="go('workers')">${ic('up', 15)}${t('goWorkers')}</button><button class="btn sm ghost" onclick="go('wps')">${ic('up', 15)}${t('goWps')}</button></div></div></div>`;
+  else if (S.violations) banner = `<div class="banner red">${ic('alert', 22)}<div>${t('bannerRisk', '<b>' + fmt(S.violations) + '</b>', '<b>' + fmt(S.fine) + ' ' + qar + '</b>')}</div></div>`;
+  else banner = `<div class="banner green">${ic('shield', 22)}<div>${t('bannerOk', win)}</div></div>`;
+
+  /* score */
+  const total = state.workers.length, okCount = total - S.problem;
+  const pct = total ? Math.round(okCount / total * 100) : 0;
+  const C = 2 * Math.PI * 62, col = !total ? '#C9CED6' : pct >= 90 ? '#2E7D32' : pct >= 60 ? '#E65100' : '#C62828';
+  const ring = `<div class="ring"><svg width="150" height="150" viewBox="0 0 150 150"><circle cx="75" cy="75" r="62" fill="none" stroke="#EEF0F3" stroke-width="14"/><circle cx="75" cy="75" r="62" fill="none" stroke="${col}" stroke-width="14" stroke-linecap="round" stroke-dasharray="${C * (total ? pct / 100 : 0)} ${C}" transform="rotate(-90 75 75)"/></svg><div class="v"><b class="num" style="color:${col}">${total ? pct + '%' : '—'}</b></div></div>`;
+
+  /* distribution */
+  const key = distType, bk = [0, 0, 0, 0, 0];
+  state.workers.forEach(w => {
+    const d = daysLeft(w[key]); if (d === null) return;
+    bk[d < 0 ? 0 : d <= 30 ? 1 : d <= 60 ? 2 : d <= 90 ? 3 : 4]++;
+  });
+  const mx = Math.max(1, ...bk), cols = ['#C62828', '#E65100', '#F2B705', '#7CB342', '#2E7D32'];
+  const bars = bk.map((n, i) => `<div class="bar"><span>${t('b' + i)}</span><div class="tr"><div class="fi" style="width:${n / mx * 100}%;background:${cols[i]}"></div></div><span class="n num">${n}</span></div>`).join('');
+
+  /* attention list */
+  const tyName = { id: t('iId'), health: t('iHealth'), contract: t('iContract') };
+  const att = S.items.slice(0, 8).map(it => `<tr><td><b>${esc(it.w.name || '—')}</b><div class="muted tnum" dir="ltr" style="text-align:start;font-size:12px">${esc(it.w.qid)}</div></td><td>${tyName[it.ty]}</td><td class="num" dir="ltr" style="text-align:start">${fmtDate(it.dt)}</td><td>${it.st === 'expired' ? `<span class="pill red">${t('expAgo', -it.d)}</span>` : `<span class="pill amber">${it.d === 0 ? t('expToday') : t('leftDays', it.d)}</span>`}</td></tr>`).join('');
+
+  return `
+  <div class="ph"><div><h2>${t('dashTitle')}</h2><div class="d">${esc(state.company.name)} · ${t('estNo')}: <span class="num">${esc(state.company.est)}</span> · ${t('today')}: <span class="num">${fmtDate(todayISO())}</span></div></div>
+    <button class="btn lg" onclick="makeReport()" id="btnReport">${ic('file', 18)}${t('dlReport')}</button></div>
+  ${banner}${tiles}
+  <div class="grid2">
+    <div class="card"><div class="ch">${t('score')}</div><div class="cb" style="text-align:center">${ring}<div class="muted">${total ? t('scoreSub', okCount, total) : t('scoreNone')}</div></div></div>
+    <div class="card"><div class="ch"><span>${t('dist')}</span><select class="inp" style="width:auto;padding:5px 10px" onchange="distType=this.value;render()" aria-label="${t('dist')}">
+      <option value="idExp" ${key === 'idExp' ? 'selected' : ''}>${t('dId')}</option><option value="healthExp" ${key === 'healthExp' ? 'selected' : ''}>${t('dHealth')}</option><option value="contractExp" ${key === 'contractExp' ? 'selected' : ''}>${t('dContract')}</option></select></div>
+      <div class="cb"><div class="bars">${bars}</div></div></div>
+  </div>
+  <div class="card" style="margin-bottom:16px"><div class="ch"><span>${t('attn')}</span>${S.items.length ? `<button class="btn sm ghost" onclick="go('workers','soonOrExpired')">${t('more')}</button>` : ''}</div>
+    ${S.items.length ? `<div class="tw"><table class="t" style="min-width:560px"><thead><tr><th>${t('colName')}</th><th>${t('colStatus')}</th><th>${t('colIdExp').split(' ')[0]}</th><th></th></tr></thead><tbody>${att}</tbody></table></div>` : `<div class="empty" style="padding:28px">${t('attnNone')}</div>`}</div>
+  <div class="muted" style="font-size:12.5px">${t('formula', win, fmt(state.settings.fine), qar)}</div>`;
+}
+
+/* ---------- workers ---------- */
+function dropZone(kind) {
+  const isW = kind === 'workers';
+  const cols = isW ? ['colName', 'colQid', 'colIdExp', 'colHealth', 'colContract'] : ['pcName', 'pcQid', 'pcAmt', 'pcDue', 'pcPaid'];
+  return `<label class="drop" for="${isW ? 'wFile' : 'pFile'}" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="dropFile(event,'${kind}')">
+      <div style="color:var(--maroon)">${ic('up', 30)}</div>
+      <div style="margin-top:6px"><b>${t(isW ? 'dropTitle' : 'pDropTitle')}</b></div>
+      <div class="muted" style="margin-top:4px;font-size:13px">${t('dropFmt')}</div>
+      <div class="cols">${cols.map(c => `<span>${t(c)}</span>`).join('')}</div>
+    </label>
+    <input type="file" id="${isW ? 'wFile' : 'pFile'}" accept=".xlsx,.xls,.csv" hidden onchange="${isW ? 'importWorkers' : 'importWps'}(this.files[0]);this.value=''">`;
+}
+function viewWorkers() {
+  return `
+  <div class="ph"><div><h2>${t('wTitle')}</h2><div class="d">${t('wDesc')}</div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost" onclick="downloadTemplate('workers')">${ic('down', 16)}${t('tpl')}</button><button class="btn" onclick="openAddWorker()">${ic('plus', 16)}${t('addWorker')}</button></div></div>
+  <div class="card" style="margin-bottom:16px"><div class="cb">
+    ${dropZone('workers')}
+    <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;justify-content:center">
+      <label style="display:flex;gap:7px;align-items:center;cursor:pointer"><input type="radio" name="wmode" value="merge" checked>${t('modeMerge')}</label>
+      <label style="display:flex;gap:7px;align-items:center;cursor:pointer"><input type="radio" name="wmode" value="replace">${t('modeReplace')}</label>
+    </div></div></div>
+  <div class="card">
+    <div class="toolbar">
+      <div class="sbox">${ic('search', 16)}<input class="inp" id="wSearch" value="${esc(wf.q)}" placeholder="${t('search')}" oninput="wf.q=this.value;wf.page=1;updateWorkersTable()"></div>
+      <select class="inp" id="wFilter" onchange="wf.f=this.value;wf.page=1;updateWorkersTable()" aria-label="filter">
+        ${[['all', 'fAll'], ['anyExpired', 'fAny'], ['idExpired', 'fId'], ['idRisk', 'fIdRisk'], ['healthExpired', 'fHealth'], ['contractExpired', 'fContract'], ['soonOrExpired', 'fSoon'], ['valid', 'fOk']].map(([v, k]) => `<option value="${v}" ${wf.f === v ? 'selected' : ''}>${t(k)}</option>`).join('')}
+      </select>
+      <button class="btn ghost sm" onclick="exportWorkers()">${ic('sheet', 15)}${t('exportXlsx')}</button>
+      <button class="btn danger sm" onclick="clearWorkers()">${ic('trash', 15)}${t('clearAll')}</button>
+    </div>
+    <div id="wTable"></div>
+  </div>`;
+}
+function workerStatus(w) {
+  const s = [docStatus(w.idExp), docStatus(w.healthExp), docStatus(w.contractExp)];
+  if (s.includes('expired')) return 'bad';
+  if (s.includes('soon')) return 'soon';
+  if (s.every(x => x === 'none')) return 'none';
+  return 'ok';
+}
+function filteredWorkers() {
+  const q = norm(wf.q);
+  return state.workers.filter(w => {
+    if (q && !(norm(w.name).includes(q) || norm(w.qid).includes(q))) return false;
+    const a = docStatus(w.idExp), b = docStatus(w.healthExp), c = docStatus(w.contractExp);
+    switch (wf.f) {
+      case 'anyExpired': return [a, b, c].includes('expired');
+      case 'idExpired': return a === 'expired';
+      case 'idRisk': return a === 'expired' || a === 'soon';
+      case 'healthExpired': return b === 'expired';
+      case 'contractExpired': return c === 'expired';
+      case 'soonOrExpired': return [a, b, c].some(x => x === 'soon' || x === 'expired');
+      case 'valid': return workerStatus(w) === 'ok';
+      default: return true;
+    }
+  });
+}
+function dateCell(iso) {
+  if (!iso) return '<td class="muted">—</td>';
+  const s = docStatus(iso), d = daysLeft(iso);
+  if (s === 'expired') return `<td class="exp"><span class="num" dir="ltr">${fmtDate(iso)}</span><small>${t('expAgo', -d)}</small></td>`;
+  if (s === 'soon') return `<td class="soon"><span class="num" dir="ltr">${fmtDate(iso)}</span><small>${d === 0 ? t('expToday') : t('leftDays', d)}</small></td>`;
+  return `<td><span class="num" dir="ltr">${fmtDate(iso)}</span></td>`;
+}
+function updateWorkersTable() {
+  const box = $('#wTable'); if (!box) return;
+  if (!state.workers.length) {
+    box.innerHTML = `<div class="empty"><div class="eic">${ic('users', 26)}</div><h3>${t('wEmptyT')}</h3><div>${t('wEmptyD')}</div></div>`; return;
+  }
+  const list = filteredWorkers();
+  const pages = Math.max(1, Math.ceil(list.length / wf.size)); if (wf.page > pages) wf.page = pages;
+  const slice = list.slice((wf.page - 1) * wf.size, wf.page * wf.size);
+  const pill = { bad: `<span class="pill red">${t('stBad')}</span>`, soon: `<span class="pill amber">${t('stSoon')}</span>`, ok: `<span class="pill green">${t('stOk')}</span>`, none: `<span class="pill gray">${t('stNone')}</span>` };
+  const rows = slice.map((w, i) => `<tr class="${workerStatus(w) === 'bad' ? 'risk' : ''}">
+    <td class="muted num">${(wf.page - 1) * wf.size + i + 1}</td><td><b>${esc(w.name || '—')}</b></td>
+    <td class="num" dir="ltr" style="text-align:start">${esc(w.qid) || '—'}</td>${dateCell(w.idExp)}${dateCell(w.healthExp)}${dateCell(w.contractExp)}
+    <td>${pill[workerStatus(w)]}</td><td><button class="iconbtn" title="${t('delete')}" aria-label="${t('delete')}" onclick="delWorker('${w.id}')">${ic('trash', 16)}</button></td></tr>`).join('');
+  box.innerHTML = `<div class="tw"><table class="t"><thead><tr><th>#</th><th>${t('colName')}</th><th>${t('colQid')}</th><th>${t('colIdExp')}</th><th>${t('colHealth')}</th><th>${t('colContract')}</th><th>${t('colStatus')}</th><th></th></tr></thead>
+    <tbody>${rows || `<tr><td colspan="8" class="empty">${t('noMatch')}</td></tr>`}</tbody></table></div>
+    <div class="pager"><span>${t('showing', list.length, state.workers.length)}</span>
+    <span style="display:flex;gap:8px;align-items:center"><button class="btn ghost sm" ${wf.page <= 1 ? 'disabled style="opacity:.4;cursor:default"' : ''} onclick="wf.page--;updateWorkersTable()">${t('prev')}</button><span class="num">${wf.page} / ${pages}</span><button class="btn ghost sm" ${wf.page >= pages ? 'disabled style="opacity:.4;cursor:default"' : ''} onclick="wf.page++;updateWorkersTable()">${t('next')}</button></span></div>`;
+}
+async function delWorker(id) {
+  if (!await ask(t('confirmDelOne'))) return;
+  state.workers = state.workers.filter(w => w.id !== id); saveWorkers(); updateWorkersTable();
+}
+async function clearWorkers() {
+  if (!state.workers.length) return;
+  if (!await ask(t('confirmDelAll'))) return;
+  state.workers = []; saveWorkers(); render();
+}
+function openAddWorker() {
+  const f = (id, k) => `<div><label class="f" for="${id}">${t(k)}</label><input class="inp" id="${id}" ${id === 'nwName' || id === 'nwQid' ? '' : 'type="date"'} ${id === 'nwQid' ? 'dir="ltr" inputmode="numeric" style="text-align:start"' : ''}></div>`;
+  openModal(t('addTitle'), `<div style="display:grid;gap:14px">${f('nwName', 'colName')}${f('nwQid', 'colQid')}${f('nwId', 'colIdExp')}${f('nwHealth', 'colHealth')}${f('nwContract', 'colContract')}<div class="err" id="nwErr"></div></div>`,
+    `<button class="btn ghost" onclick="closeModal()">${t('cancel')}</button><button class="btn" onclick="saveWorker()">${t('save')}</button>`);
+  setTimeout(() => { const e = $('#nwName'); e && e.focus(); }, 30);
+}
+function saveWorker() {
+  const name = $('#nwName').value.trim(), qid = toWestern($('#nwQid').value.trim());
+  if (!name && !qid) { $('#nwErr').textContent = t('needName'); return; }
+  state.workers.push({ id: uid(), name, qid, idExp: $('#nwId').value, healthExp: $('#nwHealth').value, contractExp: $('#nwContract').value });
+  saveWorkers(); closeModal(); render();
+}
+function downloadTemplate(kind) {
+  if (typeof XLSX === 'undefined') { toast(t('libXlsx'), 'err'); return; }
+  const heads = kind === 'workers' ? ['colName', 'colQid', 'colIdExp', 'colHealth', 'colContract'] : ['pcName', 'pcQid', 'pcAmt', 'pcDue', 'pcPaidShort'];
+  const ws = XLSX.utils.aoa_to_sheet([heads.map(h => t(h))]);
+  ws['!cols'] = heads.map(() => ({ wch: 26 }));
+  const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, kind === 'workers' ? 'Workers' : 'Payroll');
+  XLSX.writeFile(wb, kind === 'workers' ? 'workers-template.xlsx' : 'payroll-template.xlsx');
+}
+function exportWorkers() {
+  if (typeof XLSX === 'undefined') { toast(t('libXlsx'), 'err'); return; }
+  const rows = [[t('colName'), t('colQid'), t('colIdExp'), t('colHealth'), t('colContract')]].concat(filteredWorkers().map(w => [w.name, w.qid, fmtDate(w.idExp), fmtDate(w.healthExp), fmtDate(w.contractExp)]));
+  const ws = XLSX.utils.aoa_to_sheet(rows); ws['!cols'] = [{ wch: 28 }, { wch: 18 }, { wch: 22 }, { wch: 24 }, { wch: 22 }];
+  const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Workers');
+  XLSX.writeFile(wb, 'workers-' + todayISO() + '.xlsx');
+}
+
+/* ---------- WPS ---------- */
+function viewWps() {
+  const S = stats(), qar = t('qar');
+  const infos = state.wps.map(r => ({ r, i: wpsInfo(r) }));
+  const c = k => infos.filter(x => x.i.s === k).length;
+  let body;
+  if (!state.wps.length) body = `<div class="empty"><div class="eic">${ic('clock', 26)}</div><h3>${t('pEmptyT')}</h3><div>${t('pEmptyD')}</div></div>`;
+  else {
+    const order = { late: 0, today: 1, paidlate: 2, upcoming: 3, paid: 4, nodate: 5 };
+    const sorted = infos.slice().sort((a, b) => order[a.i.s] - order[b.i.s] || b.i.d - a.i.d);
+    const lab = x => ({
+      late: `<span class="pill red">${t('pLate', x.i.d)}</span>`, paidlate: `<span class="pill amber">${t('pPaidLate', x.i.d)}</span>`,
+      today: `<span class="pill amber">${t('pToday')}</span>`, upcoming: `<span class="pill gray">${t('pUp', x.i.d)}</span>`,
+      paid: `<span class="pill green">${t('pPaid')}</span>`, nodate: `<span class="pill gray">${t('pNoDate')}</span>`
+    })[x.i.s];
+    const rows = sorted.slice(0, 500).map((x, n) => `<tr class="${x.i.s === 'late' ? 'risk' : ''}"><td class="muted num">${n + 1}</td><td><b>${esc(x.r.name || '—')}</b></td><td class="num" dir="ltr" style="text-align:start">${esc(x.r.qid) || '—'}</td>
+      <td class="num">${x.r.amount ? fmt(x.r.amount) : '—'}</td><td class="num ${x.i.s === 'late' ? '' : ''}" dir="ltr" style="text-align:start">${fmtDate(x.r.due) || '—'}</td><td class="num" dir="ltr" style="text-align:start">${x.r.paid ? fmtDate(x.r.paid) + (x.r.paidTime ? ' ' + x.r.paidTime : '') : `<button class="btn sm ghost" onclick="transferNow('${x.r.id}')">${t('pNow')}</button>`}</td><td>${lab(x)}</td></tr>`).join('');
+    body = `<div class="tw"><table class="t"><thead><tr><th>#</th><th>${t('pcName')}</th><th>${t('pcQid')}</th><th>${t('pcAmt')}</th><th>${t('pcDue')}</th><th>${t('pcPaidShort')}</th><th>${t('colStatus')}</th></tr></thead><tbody>${rows}</tbody></table></div>
+      ${sorted.length > 500 ? `<div class="pager"><span>${t('showing', 500, sorted.length)}</span></div>` : ''}`;
+  }
+  const banner = !state.wps.length ? '' : S.wpsLate
+    ? `<div class="banner red">${ic('alert', 22)}<div>${t('pAlert', '<b>' + fmt(S.wpsLate) + '</b>', '<b>' + fmt(S.wpsLateAmt) + ' ' + qar + '</b>')}</div></div>`
+    : `<div class="banner green">${ic('shield', 22)}<div>${t('pAlertNone')}</div></div>`;
+  const chips = !state.wps.length ? '' : `<div class="chips"><div class="chip"><b class="num">${state.wps.length}</b><span>${t('sTotal')}</span></div><div class="chip r"><b class="num">${c('late')}</b><span>${t('sLate')}</span></div><div class="chip o"><b class="num">${c('paidlate')}</b><span>${t('sPaidLate')}</span></div><div class="chip"><b class="num">${c('upcoming') + c('today')}</b><span>${t('sUp')}</span></div><div class="chip g"><b class="num">${c('paid')}</b><span>${t('sPaid')}</span></div></div>`;
+  return `
+  <div class="ph"><div><h2>${t('pTitle')}</h2><div class="d">${t('pDesc')}</div></div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost" onclick="downloadTemplate('wps')">${ic('down', 16)}${t('tpl')}</button>${state.wps.length ? `<button class="btn danger" onclick="clearWps()">${ic('trash', 16)}${t('clearAll')}</button>` : ''}</div></div>
+  <div class="card" style="margin-bottom:16px"><div class="cb">${dropZone('wps')}<div class="muted" style="text-align:center;margin-top:12px;font-size:13px">${t('pHint')}</div></div></div>
+  ${banner}${chips}
+  <div class="card">${body}</div>`;
+}
+function transferNow(id) {
+  const r = state.wps.find(x => x.id === id); if (!r) return;
+  const n = new Date();
+  r.paid = todayISO(); r.paidTime = pad(n.getHours()) + ':' + pad(n.getMinutes());
+  saveWps(); toast(t('pNowDone'), 'ok'); render();
+}
+async function clearWps() {
+  if (!await ask(t('confirmDelWps'))) return;
+  state.wps = []; saveWps(); render();
+}
+
+/* ---------- settings ---------- */
+function viewSettings() {
+  return `
+  <div class="ph"><div><h2>${t('sTitle')}</h2></div></div>
+  <div class="card" style="margin-bottom:16px"><div class="ch">${t('sCompany')}</div><div class="cb" style="display:grid;gap:14px;max-width:560px">
+    <div><label class="f" for="stName">${t('companyName')}</label><input class="inp" id="stName" value="${esc(state.company.name)}"></div>
+    <div><label class="f" for="stEst">${t('estNo')}</label><input class="inp" id="stEst" value="${esc(state.company.est)}" dir="ltr" inputmode="numeric" style="text-align:start"></div>
+    <div><label class="f" for="stFine">${t('sFine')}</label><input class="inp" id="stFine" type="number" min="0" step="100" value="${state.settings.fine}" dir="ltr" style="text-align:start"></div>
+    <div><label class="f" for="stWin">${t('sWin')}</label><input class="inp" id="stWin" type="number" min="1" max="365" value="${state.settings.soon}" dir="ltr" style="text-align:start"></div>
+    <div class="err" id="stErr"></div>
+    <div><button class="btn" onclick="saveSettings()">${t('save')}</button></div></div></div>
+  <div class="card" style="margin-bottom:16px"><div class="ch">${t('sAccount')}</div><div class="cb" style="display:grid;gap:14px;max-width:560px">
+    <div class="muted">${t('lblEmail')}: <b class="num" dir="ltr" style="color:var(--text)">${esc(session ? session.email : '')}</b></div>
+    <div style="font-weight:700">${t('cpTitle')}</div>
+    <div><label class="f" for="cpOld">${t('cpOld')}</label><input class="inp" id="cpOld" type="password" dir="ltr" style="text-align:start" autocomplete="current-password"></div>
+    <div><label class="f" for="cpNew">${t('cpNew')}</label><input class="inp" id="cpNew" type="password" dir="ltr" style="text-align:start" autocomplete="new-password"></div>
+    <div><label class="f" for="cpNew2">${t('lblPass2')}</label><input class="inp" id="cpNew2" type="password" dir="ltr" style="text-align:start" autocomplete="new-password"></div>
+    <div class="err" id="cpErr" role="alert"></div>
+    <div><button class="btn" onclick="changePassword()">${t('save')}</button></div></div></div>
+  <div class="card" style="margin-bottom:16px"><div class="ch">${t('sBackup')}</div><div class="cb"><div class="muted" style="margin-bottom:12px">${t('sBackupD')}</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost" onclick="exportBackup()">${ic('down', 16)}${t('sExport')}</button>
+    <label class="btn ghost" for="bkFile" style="cursor:pointer">${ic('up', 16)}${t('sImport')}</label><input type="file" id="bkFile" accept=".json,application/json" hidden onchange="importBackup(this.files[0]);this.value=''"></div></div></div>
+  <div class="card"><div class="ch" style="color:var(--red)">${t('sDanger')}</div><div class="cb"><div class="muted" style="margin-bottom:12px">${t('sDangerD')}</div><button class="btn danger" onclick="wipeAll()">${ic('trash', 16)}${t('sWipe')}</button></div></div>`;
+}
+function saveSettings() {
+  const name = $('#stName').value.trim(), est = toWestern($('#stEst').value.trim());
+  const fine = parseFloat($('#stFine').value), win = parseInt($('#stWin').value, 10), err = $('#stErr');
+  if (name.length < 2) { err.textContent = t('errName'); return; }
+  if (est.length < 1) { err.textContent = t('errEst'); return; }
+  if (isNaN(fine) || fine < 0 || isNaN(win) || win < 1 || win > 365) { err.textContent = t('invalidNum'); return; }
+  state.company = { name, est };
+  state.settings = { fine, soon: win }; saveVault();
+  $('#shCompany').textContent = name; toast(t('sSaved'), 'ok'); render();
+}
+function exportBackup() {
+  const data = { app: 'sanad', version: 1, company: state.company, workers: state.workers, wps: state.wps, settings: state.settings };
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(data)], { type: 'application/json' }));
+  a.download = 'sanad-backup-' + todayISO() + '.json'; document.body.appendChild(a); a.click(); a.remove();
+}
+async function importBackup(file) {
+  if (!file) return;
+  try {
+    const d = JSON.parse(await file.text());
+    if (d.app !== 'sanad' || !Array.isArray(d.workers) || !Array.isArray(d.wps)) throw 0;
+    state.workers = d.workers; state.wps = d.wps;
+    if (d.settings) state.settings = Object.assign(state.settings, d.settings);
+    saveVault();
+    toast(t('restored'), 'ok'); render();
+  } catch (e) { toast(t('badBackup'), 'err'); }
+}
+async function wipeAll() {
+  if (!await ask(t('confirmWipe'))) return;
+  const acc = store.get('sanad_accounts', {}); delete acc[session.email]; store.set('sanad_accounts', acc);
+  logout();
+}
+async function changePassword() {
+  const o = $('#cpOld').value, n = $('#cpNew').value, n2 = $('#cpNew2').value, err = $('#cpErr');
+  err.textContent = '';
+  if (!validPass(n)) { err.textContent = t('errPass'); return; }
+  if (n !== n2) { err.textContent = t('errPass2'); return; }
+  try {
+    const rec = store.get('sanad_accounts', {})[session.email];
+    await decryptVault(await deriveKey(o, ub64(rec.salt)), rec);
+  } catch (e) { err.textContent = t('cpWrong'); return; }
+  const salt = crypto.getRandomValues(new Uint8Array(16));
+  session.key = await deriveKey(n, salt); session.saltB64 = b64(salt);
+  saveVault(); await saveChain;
+  ['cpOld', 'cpNew', 'cpNew2'].forEach(i => $('#' + i).value = '');
+  toast(t('cpDone'), 'ok');
+}
+
+/* ---------- modal ---------- */
+function openModal(title, body, foot) {
+  $('#modalRoot').innerHTML = `<div class="ov" onclick="if(event.target===this)closeModal()"><div class="md" role="dialog" aria-modal="true"><div class="mh"><span>${title}</span><button class="iconbtn" onclick="closeModal()" aria-label="close" style="color:var(--muted)">${ic('x', 18)}</button></div><div class="mb">${body}</div>${foot ? `<div class="mf">${foot}</div>` : ''}</div></div>`;
+}
+function closeModal() { $('#modalRoot').innerHTML = ''; }
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+function ask(msg) {
+  return new Promise(res => {
+    openModal(t('confirm'), `<div>${esc(msg)}</div>`, `<button class="btn ghost" id="askNo">${t('cancel')}</button><button class="btn danger" id="askYes">${t('confirm')}</button>`);
+    $('#askNo').onclick = () => { closeModal(); res(false); };
+    $('#askYes').onclick = () => { closeModal(); res(true); };
+  });
+}
+
+/* ---------- PDF risk report ---------- */
+async function makeReport() {
+  if (typeof html2canvas === 'undefined' || !window.jspdf) { toast(t('libPdf'), 'err'); return; }
+  const btn = $('#btnReport'); if (btn) btn.disabled = true;
+  toast(t('rBusy'));
+  const S = stats(), qar = t('qar'), win = state.settings.soon;
+  const tyName = { id: t('iId'), health: t('iHealth'), contract: t('iContract') };
+  /* one line per worker with issues */
+  const byW = new Map();
+  S.items.forEach(it => { const a = byW.get(it.w.id) || { w: it.w, list: [] }; a.list.push(it); byW.set(it.w.id, a); });
+  const wrows = [...byW.values()];
+  const LIM = 28;
+  const rowsHtml = wrows.slice(0, LIM).map(x => `<tr><td>${esc(x.w.name || '—')}</td><td dir="ltr" style="text-align:start">${esc(x.w.qid) || '—'}</td><td>${x.list.map(it => `<span class="${it.st === 'expired' ? 'rd' : ''}">${tyName[it.ty]} ${it.st === 'expired' ? t('expiredWord') : t('soonWord')} (${fmtDate(it.dt)})</span>`).join(' · ')}</td></tr>`).join('');
+  const brk = (label, e, s) => `<tr><td>${label}</td><td class="num">${e}</td><td class="num">${s}</td></tr>`;
+  const root = $('#reportRoot');
+  root.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  root.innerHTML = `<div class="rp">
+    <div class="hd"><div><h1>${t('rTitle')}</h1><small>${t('appTitle')}</small></div><div style="display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px">${LOGO(34)}${t('appName')}</div></div>
+    <div class="bd">
+      <div class="meta"><div><small>${t('rCompany')}</small><b>${esc(state.company.name)}</b></div><div><small>${t('rEst')}</small><b class="num">${esc(state.company.est)}</b></div><div><small>${t('rDate')}</small><b class="num">${fmtDate(todayISO())}</b></div></div>
+      <div class="kp"><div class="a"><small>${t('rViol')}</small><b class="num">${fmt(S.violations)}</b></div><div class="b"><small>${t('rFine')}</small><b class="num">${fmt(S.fine)} ${qar}</b></div></div>
+      <h3>${t('rBreak')}</h3>
+      <table><thead><tr><th>${t('rType')}</th><th>${t('rExpired')}</th><th>${t('rSoon', win)}</th></tr></thead><tbody>
+        ${brk(t('rRes'), S.idExp, S.idSoon)}${brk(t('rHealth'), S.hExp, S.hSoon)}${brk(t('rCon'), S.cExp, S.cSoon)}${brk(t('rWps'), S.wpsLate, '—')}
+      </tbody></table>
+      <h3>${t('rWorkers')}</h3>
+      ${wrows.length ? `<table><thead><tr><th>${t('colName')}</th><th>${t('colQid')}</th><th>${t('rIssue')}</th></tr></thead><tbody>${rowsHtml}</tbody></table>${wrows.length > LIM ? `<div style="font-size:12px;margin-top:6px" class="muted">${t('rMoreRows', wrows.length - LIM)}</div>` : ''}` : `<div class="muted">${t('rNone')}</div>`}
+      <div class="note">${t('rNote', fmt(state.settings.fine), qar)}</div>
+    </div></div>`;
+  try {
+    if (document.fonts && document.fonts.ready) await document.fonts.ready;
+    const canvas = await html2canvas(root.firstElementChild, { scale: 2, backgroundColor: '#ffffff', useCORS: true });
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ unit: 'pt', format: 'a4' });
+    const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight();
+    const imgH = canvas.height * pw / canvas.width, data = canvas.toDataURL('image/jpeg', 0.92);
+    const pages = Math.max(1, Math.ceil(imgH / ph - 0.01));
+    for (let i = 0; i < pages; i++) { if (i) pdf.addPage(); pdf.addImage(data, 'JPEG', 0, -i * ph, pw, imgH); }
+    pdf.save('sanad-risk-report-' + todayISO() + '.pdf');
+    toast(t('rDone'), 'ok');
+  } catch (e) { toast(t('libPdf'), 'err'); }
+  root.innerHTML = ''; if (btn) btn.disabled = false;
+}
+
+/* ---------- boot ---------- */
+window.addEventListener('hashchange', () => { if (state.company) route(); });
+authMode = Object.keys(store.get('sanad_accounts', {})).length ? 'in' : 'up';
+applyI18n();
+$('#loginView').hidden = false;
+</script>
+</body>
+</html>
